@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Node{
+            constructor(data){
+                this.data = data
+                this.next = null
+
+            }
+        }
+
+        class LinkedList{
+            constructor(){
+                this.head = null
+            }
+
+            append(data){
+                let newNode = new Node(data)
+
+                if(this.head == null){
+                    this.head = newNode
+                }
+                else{
+                    let current = this.head
+                    while(current.next != null){
+                        current = current.next
+                    }
+                    current.next = newNode
+                }
+            }
+
+            display(){
+                let current = this.head
+                
+                // console.log(current);
+
+                var result = ""
+
+                while(current != null){
+                    result += `${current.data}-->`
+                    current = current.next
+                }
+
+                console.log(`${result} null`);
+            }
+
+
+            remove(data){
+                if(!this.head){
+                    console.log("linkedlist empty");
+                }
+                if(this.head.data == data){
+                    this.head = this.head.next
+                }
+                let current = this.head
+
+                while(current.next.data != data){
+                    current = current.next
+                }
+                if(current.next){
+                    console.log(current.next);
+                    current.next = current.next.next
+                }
+            }
+        }
+
+        const nodeList = new LinkedList()
+
+        nodeList.append(2)
+        nodeList.append(2)
+        nodeList.remove(2)
+        nodeList.display()
+    </script>
+</body>
+</html>

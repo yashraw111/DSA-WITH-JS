@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              const array = [
+        [1, 2, 3,3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+
+      const transposeArray = (matrix)=>{
+        console.log(matrix);
+        let transposed = []
+
+        for(let i=0;i<matrix.length;i++){
+             transposed[i] = []
+            for(let j=0;j<matrix.length;j++){
+
+              transposed[i][j] = matrix[j][i]
+            }
+
+        }
+        console.log(transposed);
+      }
+
+      console.log(transposeArray(array));
+
+    </script>
+</body>
+</html>

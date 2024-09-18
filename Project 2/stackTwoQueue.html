@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class StackTwoQueue {
+        constructor() {
+          this.queue1 = [];
+          this.queue2 = [];
+        }
+
+        push(element) {
+          this.queue1.push(element);
+          while (this.queue2.length > 0) { 
+            this.queue1.push(this.queue2.shift());
+          }
+          console.log(this.queue1);
+          console.log(this.queue2);
+          //swapping
+
+          const temp = this.queue2;
+          this.queue2 = this.queue1;
+          this.queue1 = temp;
+
+          // console.log(this.queue1);
+          // console.log(this.queue2);
+        }
+        isEmpty() {
+          return this.queue2.length == 0;
+        }
+        pop() {
+          if (this.isEmpty()) {
+            return "stack is undrflow";
+          }
+          return this.queue2.shift();
+        }        
+        peek(){
+            return this.queue2[0]
+        }
+        size(){
+          return this.queue2.length
+        }
+      }
+      const queue = new StackTwoQueue();
+      queue.push(100);
+      queue.push(200);
+      queue.push(300);
+      queue.push(400);
+      queue.pop()
+      queue.pop()
+      queue.pop()
+      queue.pop()
+
+      console.log(queue);
+      
+
+      console.log("peek.....");
+      console.log(queue.peek());
+
+      console.log("size.....");
+      console.log(queue.size());
+      
+      
+      
+      
+    </script>
+  </body>
+</html>

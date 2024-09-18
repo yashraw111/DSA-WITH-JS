@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // maximum sum of Sub array
+
+        const arr = [12,-25,-1,25,-9,8,-23,-7]
+
+        // var currSum = 0;
+        // var maxSum = 0
+
+        // for(let i =0;i<arr.length;i++){
+        //     currSum = currSum + arr[i]
+        //     console.log(currSum);
+
+        //     if(currSum > maxSum){
+        //         maxSum = currSum
+        //     }
+        //     if(currSum < 0){
+        //         currSum = 0
+        //     }
+        // }
+        // console.log("Max",maxSum);
+    //     var currSum = 0;
+    //     var maximum = 0;
+    //   for(let i=0;i<arr.length;i++){
+    //     currSum = currSum + arr[i]
+    //     console.log(currSum);
+        
+
+    //     if(currSum>maximum){
+    //         maximum = currSum
+    //     }
+    //     if(currSum<0){
+    //         currSum = 0
+    //     }
+    //   }
+
+    //   console.log("max",maximum);
+
+    var currSum = 0;
+    var maxSum = 0
+    for(let i=0;i<arr.length;i++){
+        currSum += arr[i]
+        console.log(currSum);
+        
+        if(currSum > maxSum){
+            maxSum = currSum
+        }
+        if(currSum < 0){
+            currSum = 0
+        }
+    }
+    console.log("max",maxSum);
+    
+      
+    </script>
+</body>
+    </html>

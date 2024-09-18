@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [5,25,36,58,88,98,99]
+        const searchItem = 36
+        var found = false
+
+        let low =0
+        let high = arr.length - 1
+
+        while(low <= high){
+            let mid = Math.floor((low+high)/2)
+
+            if(arr[mid] === searchItem){
+                console.log(mid);
+                found = true;
+                break
+            }
+            else if(searchItem > arr[mid]){
+                low = mid + 1;
+
+            }
+            else{
+                high = mid - 1
+            }
+        }
+        if(!found){
+            console.log("value not found");
+        }
+
+        console.log(found);
+    </script>
+</body>
+</html>

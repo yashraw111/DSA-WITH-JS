@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function binarySearch(arr,serachitem,findone){
+            let low = 0;
+            let high = arr.length - 1;
+            let result = -1
+
+            while(low<=high){
+                const mid = Math.floor((low + high) / 2)
+
+                if(arr[mid] === serachitem){
+                    result = mid
+                    if(findone){
+                        low = mid +1;
+                        
+                    }
+                    else{
+                        high = mid -1
+                    }
+                }
+                else if(target > arr[mid]){
+                    low = mid + 1
+                }
+                else{
+                    high = mid -1
+                }
+            }
+            return result
+        }
+
+
+
+        const arr = [1,2,33,33,25,25,25,54]
+        const target = 25;
+
+        const firstIndex = binarySearch(arr,target,true)
+        const lastIndex = binarySearch(arr,target,false)
+
+        console.log(firstIndex);
+        console.log(lastIndex);
+
+        const finalResult = firstIndex - lastIndex +1
+        console.log(finalResult);
+    </script>
+
+    
+</body>
+</html>

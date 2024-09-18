@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class QueueStackTwoStack{
+        constructor(){
+            this.stack1 = []
+            this.stack2 = []
+        }
+        enQueue(ele){
+            this.stack1.push(ele)
+
+        }
+        isEmpty(){
+            return this.stack1.length == 0 && this.stack2.length == 0
+        }
+
+        deQueue(){
+            if(this.stack2.length == 0){
+                while(this.stack1.length > 0){
+                    this.stack2.push(this.stack1.pop())
+                }
+            }
+            if(this.isEmpty()){
+                return "queue is Empty"
+            }
+             this.stack2.pop()
+        }
+        peek(){
+            if(this.stack2.length == 0){
+                while(this.stack1.length > 0){
+                    this.stack2.push(this.stack1.pop())
+                }
+            }
+            return this.stack2[this.stack2.length - 1]
+        }
+        size(){
+            return this.stack2.length
+        }
+        display(){
+            var result = ""
+            this.stack2.forEach((ele)=>{
+                console.log(ele +"=>");
+                result += ` =>${ele}`
+                
+
+            })
+            console.log(result);
+            
+        }
+       
+       }
+
+       const Queue = new QueueStackTwoStack()
+
+       Queue.enQueue(1)
+       Queue.enQueue(2)
+       Queue.enQueue(3)
+       Queue.enQueue(4)
+       Queue.display()
+       Queue.deQueue()
+    
+    //    Queue.display()
+    </script>
+</body>
+</html>

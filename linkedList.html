@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class Node{
+        //     constructor(data){
+        //         this.data = data
+        //         this.next = null
+        //     }
+        // }
+        // class linkedlist{
+        //     constructor(){
+        //         this.head = null
+        //     }
+        //     append(data){
+        //         let newNode = new Node(data)
+
+        //         if(this.head == null){
+        //             this.head = newNode
+        //         }
+        //         else{
+        //             let current = this.head
+
+        //             while(current.next != null){
+        //                 current = current.next
+        //             }
+        //             current.next = newNode
+        //         }
+        //     }
+        //     display(){
+        //         let current = this.head
+
+        //         var result = ""
+
+        //         while(current != null){
+        //             result += `${current.data}-->` 
+        //             current = current.next
+        //         }
+        //         console.log(`${result} null`);
+                
+        //     }
+        //     remove(data){
+        //         if(!this.head){
+        //             console.log("linked list is Emplty");
+                    
+        //         }
+        //         if(this.head.data == data){
+        //             this.head = this.head.next
+        //         }
+        //         let current = this.head
+
+        //         while(current.next.data != data){
+        //             current = current.next
+        //         }
+        //         if(current.next){
+        //             current.next = current.next.next
+        //         }
+        //     }
+        // }
+        // const nodelist = new linkedlist()
+
+        // nodelist.append(1)
+        // nodelist.append(2)
+        // nodelist.append(3)
+
+        // nodelist.remove(3)
+
+        // nodelist.display()
+
+        class Node{
+            constructor(data){
+                this.data = data
+                this.next = null
+            }
+        }
+        class nodelist{
+            constructor(){
+                this.head = null
+            }
+            apend(data){
+                let newNode = new Node(data)
+
+                if(this.head == null){
+                    this.head  = newNode
+                }
+                else {
+                   let current = this.head
+
+                    while(current.next != null){
+                        current = current.next
+                    }
+                    current.next = newNode
+                }
+            }
+
+            display(){
+                let current = this.head
+
+                let result = ""
+
+                while(current != null){
+                    result += `${current.data}-->`
+                    current = current.next
+                }
+                console.log(result);
+                
+
+            }
+            remove(data){
+                if(!this.head){
+                    return "node is Empty"
+                }
+
+                if(this.head.data == data){
+                    this.head = this.head.next
+                }
+                
+                else{
+                    let current =this.head
+
+                    while(current.next.data != data){
+                        current = current.next
+                    }
+                    if(current.next){
+                        current.next = current.next.next
+                    }
+                }
+            }
+        }
+
+        const node = new nodelist()
+        node.apend(0)
+        node.apend(1)
+        node.apend(2)
+        node.remove()
+        node.display(1)
+    </script>
+</body>
+</html>

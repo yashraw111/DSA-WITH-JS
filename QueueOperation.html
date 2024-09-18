@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Queue{
+            constructor(){
+                this.arr = []
+            }
+            
+            enqueue(ele){
+                this.arr.push(ele)
+            }
+            display(){
+                const result = this.arr.join(" ")
+                console.log(result);
+            }
+
+            deQueue(){
+                if(this.arr.length == 0){
+                    return "queue is empty"
+                }
+                return this.arr.shift()
+            }
+            size(){
+                return this.arr.length
+            }
+            frontPeek(){
+                return this.arr[0]
+            }
+            sum(){
+                var sum= 0;
+              this.arr.map((el)=>{
+                    return sum += el
+                })
+                return sum
+            }
+        }
+
+        const queue = new Queue()
+
+        queue.enqueue(2)
+        queue.enqueue(3)
+        queue.enqueue(4)
+        queue.deQueue()
+        queue.display()
+        console.log(queue.size());
+        console.log(queue.firstValue());
+
+        console.log(queue.sum());
+    </script>
+</body>
+</html>

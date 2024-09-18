@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class StackTwoQueue{
+            constructor(){
+                this.Queue1 = []
+                this.Queue2 = []
+            }
+
+            push(element){
+                this.Queue1.push(element)
+                while(this.Queue2.length > 0){
+                 this.Queue1.push(this.Queue2.shift())
+                }
+                console.log(this.Queue1);
+                console.log(this.Queue2);
+                
+                const temp = this.Queue2
+                this.Queue2 = this.Queue1
+                this.Queue1 = temp
+                
+                console.log(this.Queue1);
+                console.log(this.Queue2);
+            }
+            isEmpty(){
+                return this.Queue2.length == 0
+            }
+            pop(){
+                if(this.isEmpty()){
+                    return "stack is underFlow"
+                }
+                return this.Queue2.shift()
+
+            }
+            peek(){
+                return this.Queue2[0]
+
+            }
+            size(){
+                return this.Queue2.length
+            }
+            display(){
+                this.Queue2.forEach((ele)=>{
+                    console.log(ele);
+                    
+                })
+            }
+        }
+        const stack = new StackTwoQueue()
+
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        console.log("pop Value ",stack.pop());
+        
+        stack.display()
+        stack.display()
+    </script>
+</body>
+</html>
